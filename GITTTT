@@ -1,0 +1,9 @@
+To commit-
+navigate to ur project directory- cd fbla(tab)
+git add .
+git commit -m "Add changes"
+git push origin main
+
+To pull- 
+navigate to project directory
+git pull link
