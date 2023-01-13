@@ -1,6 +1,6 @@
-# Coding & Programming
+# Computer Game & Simulation Programming
 
-Our submission for the 2022-23 Coding & Programming FBLA event
+Our submission for the 2022-23 Computer Game & Simulation Programming FBLA event
 
 ## Information
 
