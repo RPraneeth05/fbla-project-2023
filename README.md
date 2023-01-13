@@ -9,7 +9,7 @@ Our submission for the 2022-23 Coding & Programming FBLA event
 * Some knowledge with the terminal
 
 ### How to run:
-1. Download/clone the repository and install all dependencies
+1. Download or clone the repository and install all dependencies
 ```
 git clone https://github.com/RPraneeth05/fbla-project-2023.git
 ```
