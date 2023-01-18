@@ -23,5 +23,17 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        mouse_pos = event.pos
+        if (x/2-300 + 25 < mouse_pos[0] < x/2-300 + 25 + 175) and (290 < mouse_pos[1] < 290 + 130):
+            running = False
+        if (x/2-300 + 25 < mouse_pos[0] < x/2-300 + 25 + 175) and (460 < mouse_pos[1] < 460 + 130):
+            running = False
+        if (x/2+125 - 25 < mouse_pos[0] < x/2+125 - 25 + 175) and (290 < mouse_pos[1] < 290 + 130):
+            running = False
+        if (x/2+125 - 25 < mouse_pos[0] < x/2+125 - 25 + 175) and (460 < mouse_pos[1] < 460 + 130):
+            running = False
+
+
 # Quit pygame
 pygame.quit()
