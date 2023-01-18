@@ -6,8 +6,13 @@ import pygame
 pygame.init()
 fps = 60
 fpsClock = pygame.time.Clock()
-width, height = 640, 480
-screen = pygame.display.set_mode((width, height))
+
+screen = pygame.display.set_mode((800, 600))
+x,y = screen.get_size()
+
+screen.fill((255, 255, 255))
+
+pygame.display.flip()
 
 font = pygame.font.SysFont('Arial', 40)
 
@@ -69,6 +74,14 @@ class Button():
 def myFunction():
     print('Button Pressed')
 
+
+# pygame.draw.rect(screen, (0, 0, 255), (50, 20, 700, 250))
+
+# pygame.draw.rect(screen, (0, 255, 0), (x/2-300 + 25, 290, 175, 130))
+# pygame.draw.rect(screen, (0, 255, 0), (x/2-300 + 25, 460, 175, 130))
+
+# pygame.draw.rect(screen, (0, 255, 0), (x/2+125 - 25, 290, 175, 130))
+# pygame.draw.rect(screen, (0, 255, 0), (x/2+125 - 25, 460, 175, 130))
 
 customButton = Button(30, 30, 400, 100, 'C-U-M', myFunction)
 
