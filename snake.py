@@ -1,47 +1,33 @@
-
-# Import and initialize the pygame library
-
 import pygame
 
+# Initialize pygame
 pygame.init()
 
+# Set the screen size
+screen = pygame.display.set_mode((600, 600))
 
-# Set up the drawing window
+# Fill the screen with a background color
+# screen.fill((255, 255, 255))
 
-screen = pygame.display.set_mode([500, 500])
+# Set the width and height of each grid cell
+cell_width = 50
+cell_height = 50
 
+# Draw the horizontal grid lines
+for y in range(0, 600, cell_height):
+    pygame.draw.line(screen, (0, 50, 0), (0, y), (600, y))
 
-# Run until the user asks to quit
+# Draw the vertical grid lines
+for x in range(0, 600, cell_width):
+    pygame.draw.line(screen, (0, 50, 0), (x, 0), (x, 600))
 
-running = True
+# Update the display
+pygame.display.flip()
 
-while running:
-
-
-    # Did the user click the window close button?
-
+# Wait for the user to close the window
+done = False
+while not done:
     for event in pygame.event.get():
-
         if event.type == pygame.QUIT:
-
-            running = False
-
-
-    # Fill the background with white
-
-    # screen.fill((255, 255, 255))
-
-
-    # Draw a solid blue circle in the center
-
-    pygame.draw.rect(screen, (0, 0, 255), (30, 30, 16, 16))
-
-
-    # Flip the display
-
-    pygame.display.flip()
-
-
-# Done! Time to quit.
-
-pygame.quit()
+            done = True
+            break
