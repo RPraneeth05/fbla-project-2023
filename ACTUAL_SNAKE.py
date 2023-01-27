@@ -78,7 +78,7 @@ time, time_step = 0, 110
 
 # Load image and create rect for it
 tet1 = random.randint(0, 1)
-food_image = "g"
+food_image = "testhahahahah"
 if tet1 == 1:
     food_image = pygame.image.load("S.png")
 elif tet1 == 0:
