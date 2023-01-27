@@ -1,12 +1,12 @@
 import pygame
 from random import randrange
-WINDOW = 1000
-TILE_SIZE = 50
-difficulty = 2
+WINDOW = 640
+TILE_SIZE = 32
+difficulty = 0
 if difficulty == 1:
-    WINDOW = 750
+    WINDOW = 480
 elif difficulty == 2:
-    WINDOW = 500
+    WINDOW = 320
 RANGE = (TILE_SIZE // 2, WINDOW - TILE_SIZE // 2, TILE_SIZE)
 def get_random_position(): return [randrange(*RANGE), randrange(*RANGE)]
 snake = pygame.rect.Rect([0, 0, TILE_SIZE - 2, TILE_SIZE - 2])
@@ -14,7 +14,7 @@ snake.center = get_random_position()
 length = 1
 segments = [snake.copy()]
 snake_dir = (0, 0)
-time, time_step = 0, 110
+time, time_step = 0, 1000
 food = snake.copy()
 food.center = get_random_position()
 screen = pygame.display.set_mode([WINDOW] * 2)
