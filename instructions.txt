@@ -1,7 +1,0 @@
-navigate to project directory- cd fbla(tab)
-git add .
-git commit -m msg
-git push origin main
-
-navigate to project directory- cd fbla(tab)
-git pull link
