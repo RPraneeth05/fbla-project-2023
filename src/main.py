@@ -22,8 +22,20 @@ snake_dir = (0, 0)
 time, time_step = 0, 100
 
 # Food definition
-food = snake.copy()
-food.center = get_random_position()
+food1 = snake.copy()
+food1.center = get_random_position()
+
+food2 = snake.copy()
+food2.center = get_random_position()
+
+food3 = snake.copy()
+food3.center = get_random_position()
+
+food4 = snake.copy()
+food4.center = get_random_position()
+
+food5 = snake.copy()
+food5.center = get_random_position()
 
 # Pygame initialization
 screen = pygame.display.set_mode([WINDOW] * 2)
@@ -51,17 +63,37 @@ while True:
     # Wall collisions and eating self
     self_eating = pygame.Rect.collidelist(snake, segments[:-1]) != -1
     if snake.left < 0 or snake.right > WINDOW or snake.top < 0 or snake.bottom > WINDOW or self_eating:
-        snake.center, food.center = get_random_position(), get_random_position()
+        snake.center, food1.center = get_random_position(), get_random_position()
         length, snake_dir = 1, (0, 0)
         segments = [snake.copy()]
 
     # Check food
-    if snake.center == food.center:
-        food.center = get_random_position()
+    if snake.center == food1.center:
+        food1.center = get_random_position()
+        length += 1
+
+    if snake.center == food1.center:
+        food2.center = get_random_position()
+        length += 1
+
+    if snake.center == food1.center:
+        food3.center = get_random_position()
+        length += 1
+
+    if snake.center == food1.center:
+        food4.center = get_random_position()
+        length += 1
+
+    if snake.center == food1.center:
+        food5.center = get_random_position()
         length += 1
 
     # Draw food
-    pygame.draw.rect(screen, 'red', food)
+    pygame.draw.rect(screen, 'red', food1)
+    pygame.draw.rect(screen, 'red', food2)
+    pygame.draw.rect(screen, 'red', food3)
+    pygame.draw.rect(screen, 'red', food4)
+    pygame.draw.rect(screen, 'red', food5)
 
     # Draw snake
     [pygame.draw.rect(screen, 'green', segment) for segment in segments]
