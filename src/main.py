@@ -21,7 +21,7 @@ snake_dir = (0, 0)
 # Time control
 time, time_step = 0, 100
 
-word = 'apple'
+word = 'tesya'
 word_list = list(word)
 
 # Food definition
@@ -48,9 +48,10 @@ food5Rect.center = get_random_position()
 # Pygame initialization
 screen = pygame.display.set_mode([WINDOW] * 2)
 clock = pygame.time.Clock()
-
+count = 1
 # Event loop
 while True:
+    
     # Check for events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -75,13 +76,13 @@ while True:
         length, snake_dir = 1, (0, 0)
         segments = [snake.copy()]
 
-    count = 1
+    
 
     # Check food
     if snake.center == food1Rect.center:
         food1Rect.center = (-999, -999)
         if count != 1:
-            print("Mistake has occured")
+            exit()
         count += 1
         length += 1
 
@@ -89,28 +90,28 @@ while True:
         
         food2Rect.center = (-999, -999)
         if count != 2:
-            print("Mistake has occured")
+            exit()
         count += 1
         length += 1
 
     if snake.center == food3Rect.center:
         food3Rect.center = (-999, -999)
         if count != 3:
-            print("Mistake has occured")
+            exit()
         count += 1
         length += 1
 
     if snake.center == food4Rect.center:
         food4Rect.center = (-999, -999)
         if count != 4:
-            print("Mistake has occured")
+            exit()
         count += 1
         length += 1
 
     if snake.center == food5Rect.center:
         food5Rect.center = (-999, -999)
         if count != 5:
-            print("Mistake has occured")
+            exit()
         count += 1
         length += 1
 
