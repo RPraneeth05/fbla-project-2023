@@ -76,23 +76,23 @@ while True:
 
     # Check food
     if snake.center == food1Rect.center:
-        food1Rect.center = get_random_position()
+        food1Rect.center = (-999, -999)
         length += 1
 
     if snake.center == food2Rect.center:
-        food2Rect.center = get_random_position()
+        food2Rect.center = (-999, -999)
         length += 1
 
     if snake.center == food3Rect.center:
-        food3Rect.center = get_random_position()
+        food3Rect.center = (-999, -999)
         length += 1
 
     if snake.center == food4Rect.center:
-        food4Rect.center = get_random_position()
+        food4Rect.center = (-999, -999)
         length += 1
 
     if snake.center == food5Rect.center:
-        food5Rect.center = get_random_position()
+        food5Rect.center = (-999, -999)
         length += 1
 
     # Draw food
