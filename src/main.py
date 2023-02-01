@@ -21,8 +21,8 @@ snake_dir = (0, 0)
 # Time control
 time, time_step = 0, 100
 
-word = 'T E S T S'
-word_list = word.split()
+word = 'apple'
+word_list = list(word)
 
 # Food definition
 food1 = pygame.image.load(f'./src/letters/{word_list[0]}.png')
@@ -75,25 +75,43 @@ while True:
         length, snake_dir = 1, (0, 0)
         segments = [snake.copy()]
 
+    count = 1
+
     # Check food
     if snake.center == food1Rect.center:
         food1Rect.center = (-999, -999)
+        if count != 1:
+            print("Mistake has occured")
+        count += 1
         length += 1
 
     if snake.center == food2Rect.center:
+        
         food2Rect.center = (-999, -999)
+        if count != 2:
+            print("Mistake has occured")
+        count += 1
         length += 1
 
     if snake.center == food3Rect.center:
         food3Rect.center = (-999, -999)
+        if count != 3:
+            print("Mistake has occured")
+        count += 1
         length += 1
 
     if snake.center == food4Rect.center:
         food4Rect.center = (-999, -999)
+        if count != 4:
+            print("Mistake has occured")
+        count += 1
         length += 1
 
     if snake.center == food5Rect.center:
         food5Rect.center = (-999, -999)
+        if count != 5:
+            print("Mistake has occured")
+        count += 1
         length += 1
 
     # Draw food
