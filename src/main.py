@@ -21,26 +21,27 @@ snake_dir = (0, 0)
 # Time control
 time, time_step = 0, 100
 
-
+word = 'T E S T S'
+word_list = word.split()
 
 # Food definition
-food1 = pygame.image.load('./src/letters/A.png')
+food1 = pygame.image.load(f'./src/letters/{word_list[0]}.png')
 food1Rect = food1.get_rect()
 food1Rect.center = get_random_position()
 
-food2 = pygame.image.load('./src/letters/B.png')
+food2 = pygame.image.load(f'./src/letters/{word_list[1]}.png')
 food2Rect = food2.get_rect()
 food2Rect.center = get_random_position()
 
-food3 = pygame.image.load('./src/letters/C.png')
+food3 = pygame.image.load(f'./src/letters/{word_list[2]}.png')
 food3Rect = food3.get_rect()
 food3Rect.center = get_random_position()
 
-food4 = pygame.image.load('./src/letters/D.png')
+food4 = pygame.image.load(f'./src/letters/{word_list[3]}.png')
 food4Rect = food4.get_rect()
 food4Rect.center = get_random_position()
 
-food5 = pygame.image.load('./src/letters/E.png')
+food5 = pygame.image.load(f'./src/letters/{word_list[4]}.png')
 food5Rect = food5.get_rect()
 food5Rect.center = get_random_position()
 
