@@ -21,8 +21,8 @@ snake_dir = (0, 0)
 # Time control
 time, time_step = 0, 100
 
-word = 'T E S T S'
-word_list = word.split()
+word = 'apple'
+word_list = list(word)
 
 # Food definition
 food1 = pygame.image.load(f'./src/letters/{word_list[0]}.png')
@@ -48,6 +48,7 @@ food5Rect.center = get_random_position()
 # Pygame initialization
 screen = pygame.display.set_mode([WINDOW] * 2)
 clock = pygame.time.Clock()
+count = 0
 
 # Event loop
 while True:
@@ -67,34 +68,6 @@ while True:
 
     # Fill screen
     screen.fill('black')
-
-    # Wall collisions and eating self
-    self_eating = pygame.Rect.collidelist(snake, segments[:-1]) != -1
-    if snake.left < 0 or snake.right > WINDOW or snake.top < 0 or snake.bottom > WINDOW or self_eating:
-        snake.center, food1.center = get_random_position(), get_random_position()
-        length, snake_dir = 1, (0, 0)
-        segments = [snake.copy()]
-
-    # Check food
-    if snake.center == food1Rect.center:
-        food1Rect.center = (-999, -999)
-        length += 1
-
-    if snake.center == food2Rect.center:
-        food2Rect.center = (-999, -999)
-        length += 1
-
-    if snake.center == food3Rect.center:
-        food3Rect.center = (-999, -999)
-        length += 1
-
-    if snake.center == food4Rect.center:
-        food4Rect.center = (-999, -999)
-        length += 1
-
-    if snake.center == food5Rect.center:
-        food5Rect.center = (-999, -999)
-        length += 1
 
     # Draw food
     # pygame.draw.rect(screen, 'red', food1)
@@ -118,6 +91,60 @@ while True:
         snake.move_ip(snake_dir)
         segments.append(snake.copy())
         segments = segments[-length:]
+
+    # Wall collisions and eating self
+    self_eating = pygame.Rect.collidelist(snake, segments[:-1]) != -1
+    if snake.left < 0 or snake.right > WINDOW or snake.top < 0 or snake.bottom > WINDOW or self_eating:
+        snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
+        ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+        length, snake_dir = 1, (0, 0)
+        segments = [snake.copy()]
+
+    # Check food
+    if snake.center == food1Rect.center:
+        count += 1
+        food1Rect.center = (-999, -999)
+        if count != 1:
+            count = 0
+            snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
+            ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+        # length += 1
+
+    if snake.center == food2Rect.center:
+        count += 1
+        food2Rect.center = (-999, -999)
+        if count != 2:
+            count = 0
+            snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
+            ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+        # length += 1
+
+    if snake.center == food3Rect.center:
+        count += 1
+        food3Rect.center = (-999, -999)
+        if count != 3:
+            count = 0
+            snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
+            ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+        # length += 1
+
+    if snake.center == food4Rect.center:
+        count += 1
+        food4Rect.center = (-999, -999)
+        if count != 4:
+            count = 0
+            snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
+            ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+        # length += 1
+
+    if snake.center == food5Rect.center:
+        count += 1
+        food5Rect.center = (-999, -999)
+        if count != 5:
+            count = 0
+            snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
+            ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+        length += 1
 
     # Enable display
     pygame.display.flip()
