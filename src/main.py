@@ -108,6 +108,8 @@ while True:
             count = 0
             snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
             ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+            length, snake_dir = 1, (0, 0)
+            segments = [snake.copy()]
         # length += 1
 
     if snake.center == food2Rect.center:
@@ -117,6 +119,8 @@ while True:
             count = 0
             snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
             ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+            length, snake_dir = 1, (0, 0)
+            segments = [snake.copy()]
         # length += 1
 
     if snake.center == food3Rect.center:
@@ -126,6 +130,8 @@ while True:
             count = 0
             snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
             ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+            length, snake_dir = 1, (0, 0)
+            segments = [snake.copy()]
         # length += 1
 
     if snake.center == food4Rect.center:
@@ -135,6 +141,8 @@ while True:
             count = 0
             snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
             ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+            length, snake_dir = 1, (0, 0)
+            segments = [snake.copy()]
         # length += 1
 
     if snake.center == food5Rect.center:
@@ -144,6 +152,8 @@ while True:
             count = 0
             snake.center, food1Rect.center, food2Rect.center, food3Rect.center, food4Rect.center, food5Rect.center = get_random_position(
             ), get_random_position(), get_random_position(), get_random_position(), get_random_position(), get_random_position()
+            length, snake_dir = 1, (0, 0)
+            segments = [snake.copy()]
         length += 1
 
     # Enable display
