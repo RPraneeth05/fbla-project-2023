@@ -21,7 +21,7 @@ snake_dir = (0, 0)
 # Time control
 time, time_step = 0, 100
 
-words = ["BENCH", "BUNCH", "CHAIR", "CHALK", "CHASE", "CLIFF", "CLOUD", "DANCE", "FLASH", "GREET", "GLASS", "PLANT", "RADII", "SHINE", "UNION"]
+words = ["BENCH", "BUNCH", "CHAIR", "CHALK", "CHASE", "CLIFF", "CLOUD", "DANCE", "FLASH", "GREET", "GLASS", "PLANT", "SHINE", "UNION"]
 
 word = choice(words)
 word_list = list(word)
